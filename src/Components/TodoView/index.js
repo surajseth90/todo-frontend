@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./style.scss";
 
-const BASE_API = "http://localhost:8000";
+const BASE_API = "https://todo-app-backed.onrender.com";
 
 function Todo({ todos, setTodos, popupActive, setPopupActive }) {
   const [selectedTask, setSelectedTask] = useState({});

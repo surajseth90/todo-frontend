@@ -1,7 +1,7 @@
 import "./style.scss";
 import { useState } from "react";
 
-const BASE_API = "http://localhost:8000";
+const BASE_API = "https://todo-app-backed.onrender.com";
 
 function AddTodoPopup({ todos, setTodos, setPopupActive }) {
   const [todoTitle, setTodoTitle] = useState("");
