@@ -1,0 +1,61 @@
+:root {
+  --primary: #d81e5b;
+  --secondary: #8a4efc;
+  --light: #eee;
+  --light-alt: #61759b;
+  --dark: #131a26;
+  --dark-alt: #202b3e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  // box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: gray;
+}
+
+body {
+  background-image: linear-gradient(50deg, #a683e3 50%, #e4e9fd 50%);
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  .header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+    top: 40px;
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+    }
+  }
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  // z-index: 1;
+  backdrop-filter: blur(3px);
+}

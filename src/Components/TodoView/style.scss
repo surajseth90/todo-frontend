@@ -1,0 +1,247 @@
+.App {
+  padding: 32px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.title-view {
+  width: 50%;
+  height: 80%;
+}
+
+.detail-view {
+  width: 50%;
+  height: 70%;
+  margin-top: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .current-task {
+    width: 40%;
+    height: 70%;
+    border: 2px solid #eee;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px 6px #a683e3;
+    padding: 20px;
+
+    &.blur {
+      filter: blur(3px);
+    }
+  }
+
+  .detail-task-heading {
+    height: 15%;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .current-task-title {
+    height: 60px;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+    width: 90%;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+  }
+  .current-task-detail {
+    width: 90%;
+    border: none;
+    border-radius: 25px;
+    height: 150px;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-left: 9px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .edit-form-btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    width: 100%;
+
+    button {
+      font-size: 30px;
+      padding: 5px 20px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      color: #eee;
+      background-image: linear-gradient(
+        to right,
+        var(--primary),
+        var(--secondary)
+      );
+
+      &:hover {
+        border-color: #fff;
+        background-image: linear-gradient(
+          to left,
+          var(--primary),
+          var(--secondary)
+        );
+      }
+
+      &:disabled {
+        pointer-events: none;
+        cursor: auto;
+      }
+    }
+  }
+
+  label {
+    margin: 10px 0;
+    font-size: 25px;
+  }
+}
+
+.task-list-container {
+  width: 460px;
+  min-height: 500px;
+  border-radius: 50px;
+  position: absolute;
+  top: 135px;
+  left: 155px;
+  box-shadow: 0 0 4px 8px #eef;
+}
+.task-list {
+  width: 430px;
+  height: 430px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-flow: column;
+  color: black;
+  margin-top: 42px;
+  p {
+    font-size: 30px;
+  }
+}
+
+.task-list::-webkit-scrollbar {
+  width: 1em;
+}
+
+.task-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.task {
+  position: relative;
+  background-color: #e4e9fd;
+  padding: 0px 5px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  width: 90%;
+  height: 70px;
+  flex-direction: row;
+  min-height: 60px;
+  // max-height: 80px;
+  justify-content: center;
+
+  &.task_ {
+    margin: 15px 0;
+  }
+
+  .title-btn {
+    width: 55%;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: black;
+    display: flex;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.task-actions {
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+
+  button {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #eee;
+    background-image: linear-gradient(
+      to right,
+      var(--primary),
+      var(--secondary)
+    );
+    border-radius: 15px;
+
+    &:hover {
+      border-color: #fff;
+      background-image: linear-gradient(
+        to left,
+        var(--primary),
+        var(--secondary)
+      );
+    }
+  }
+}
+
+.task.is-complete .text {
+  text-decoration: line-through;
+}
+
+.addPopup {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--light);
+  background-color: var(--primary);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--primary),
+    var(--secondary)
+  );
+  cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+  .task-list {
+    flex-direction: column;
+    width: 30%;
+  }
+}
