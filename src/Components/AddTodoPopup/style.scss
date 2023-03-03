@@ -4,7 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
 
   .popup {
     position: absolute;
@@ -16,17 +18,18 @@
     max-width: 400px;
     background-color: var(--light);
     padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0px 4px 32px var(--dark);
+    border-radius: 40px;
+    box-shadow: 0 0 7px;
+    background: #822bcf;
 
     .closePopup {
       position: absolute;
-      top: 16px;
-      right: 16px;
+      top: 12px;
+      right: 12px;
       width: 20px;
       height: 20px;
       font-size: 20px;
-      color: var(--dark);
+      color: white;
       cursor: pointer;
     }
 
@@ -68,27 +71,33 @@
       button {
         padding: 16px 32px;
         border-radius: 999px;
-        background-image: linear-gradient(
-          to right,
-          var(--primary),
-          var(--secondary)
-        );
+        // background-image: linear-gradient(
+        //   to right,
+        //   var(--primary),
+        //   var(--secondary)
+        // );
         font-weight: 700;
         font-size: 18px;
         margin-top: 16px;
         text-align: center;
         cursor: pointer;
         transition: background-image 5s;
-        color: #fff;
+        // color: #fff;
+        color: black;
+        background-color: white;
+        border: 2px solid transparent;
 
         &:hover {
+          border: 2px solid;
           border-color: #fff;
-          background-image: linear-gradient(
-            to left,
-            var(--primary),
-            var(--secondary)
-          );
-          box-shadow: 0 0 20px #8a4efc;
+          color: white;
+          background-color: black;
+          // background-image: linear-gradient(
+          //   to left,
+          //   var(--primary),
+          //   var(--secondary)
+          // );
+          // box-shadow: 0 0 20px #8a4efc;
         }
       }
     }

@@ -1,7 +1,6 @@
 import "./style.scss";
 import { useState } from "react";
-
-const BASE_API = "https://todo-app-backed.onrender.com";
+import { BASE_API } from "../../helper";
 
 function AddTodoPopup({ todos, setTodos, setPopupActive }) {
   const [todoTitle, setTodoTitle] = useState("");
@@ -27,7 +26,11 @@ function AddTodoPopup({ todos, setTodos, setPopupActive }) {
   return (
     <div className="Popup-container">
       <div className="popup">
-        <div className="closePopup" onClick={() => setPopupActive(false)}>
+        <div
+          className="closePopup"
+          onClick={() => setPopupActive(false)}
+          title="close"
+        >
           X
         </div>
         <div className="add-todo-details">
