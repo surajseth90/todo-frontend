@@ -78,56 +78,56 @@ function Todo({ todos, setTodos, popupActive, setPopupActive }) {
 
   return (
     <div className="App">
-      <div className="title-view">
-        <div className="task-list-container">
-          <div className="task-list">
-            {todos.length > 0 ? (
-              todos.map((todo, key) => (
-                <div
-                  className={`task ${key == 0 ? "" : "task_"} ${
-                    todo?.complete ? " is-complete" : ""
-                  }`}
-                  key={key}
+      {/* <div className="title-view"> */}
+      <div className="task-list-container">
+        <div className="task-list">
+          {todos.length > 0 ? (
+            todos.map((todo, key) => (
+              <div
+                className={`task ${key == 0 ? "" : "task_"} ${
+                  todo?.complete ? " is-complete" : ""
+                }`}
+                key={key}
+              >
+                <button
+                  className="title-btn"
+                  onClick={() => completeTask(todo?._id)}
                 >
+                  <p className="text">{todo?.title}</p>
+                </button>
+                <div className="task-actions">
                   <button
-                    className="title-btn"
-                    onClick={() => completeTask(todo?._id)}
+                    className="delete-todo"
+                    onClick={() => deleteTask(todo?._id)}
                   >
-                    <p className="text">{todo?.title}</p>
+                    Delete
                   </button>
-                  <div className="task-actions">
-                    <button
-                      className="delete-todo"
-                      onClick={() => deleteTask(todo?._id)}
-                    >
-                      Delete
-                    </button>
-                    <button
-                      className="view-detail"
-                      onClick={() => {
-                        setSelectedTask(todo);
-                      }}
-                    >
-                      View
-                    </button>
-                  </div>
+                  <button
+                    className="view-detail"
+                    onClick={() => {
+                      setSelectedTask(todo);
+                    }}
+                  >
+                    View
+                  </button>
                 </div>
-              ))
-            ) : (
-              <p>You currently have no tasks</p>
-            )}
-          </div>
-        </div>
-
-        <div
-          className="addPopup"
-          role="button"
-          onClick={() => setPopupActive(true)}
-        >
-          +
+              </div>
+            ))
+          ) : (
+            <p>You currently have no tasks</p>
+          )}
         </div>
       </div>
-      <div className="detail-view">
+
+      <div
+        className="addPopup"
+        role="button"
+        onClick={() => setPopupActive(true)}
+      >
+        +
+      </div>
+      {/* </div> */}
+      {/* <div className="detail-view">
         {selectedTask?._id ? (
           <div className={`current-task ${selectedTask?._id ? "" : "blur"}`}>
             <form>
@@ -175,7 +175,7 @@ function Todo({ todos, setTodos, popupActive, setPopupActive }) {
             </div>
           </div>
         ) : null}
-      </div>
+      </div> */}
       {popupActive ? <div className="overlay"></div> : null}
     </div>
   );

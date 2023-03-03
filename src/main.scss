@@ -1,10 +1,6 @@
 :root {
-  --primary: #d81e5b;
-  --secondary: #8a4efc;
-  --light: #eee;
-  --light-alt: #61759b;
-  --dark: #131a26;
-  --dark-alt: #202b3e;
+  --primary: #6740af;
+  --secondary: #eee;
 }
 
 * {
@@ -25,7 +21,9 @@ body,
 }
 
 body {
-  background-image: linear-gradient(50deg, #a683e3 50%, #e4e9fd 50%);
+  // background-image: linear-gradient(50deg, #a683e3 50%, #e4e9fd 50%);
+  background: #594999;
+  background-size: cover;
 }
 
 .app-container {
@@ -42,6 +40,7 @@ body {
     position: fixed;
     top: 40px;
     h1 {
+      color: #eee;
       font-size: 40px;
       font-weight: 700;
     }
