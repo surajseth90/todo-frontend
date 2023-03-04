@@ -94,13 +94,8 @@ function Todo({ todos, setTodos, popupActive, setPopupActive }) {
                 >
                   <div className="task-text text-title" title={todo?.title}>
                     {todo?.title}
-                    {/* <span></span> */}
                   </div>
-                  <div className="task-text text-detail">
-                    {/* <span> */}
-                    {todo?.detail}
-                    {/* </span> */}
-                  </div>
+                  <div className="task-text text-detail">{todo?.detail}</div>
                 </button>
                 {/* <button
                   className="update-bg-color"

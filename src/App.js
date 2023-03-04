@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div className="app-container">
-        <Header setPopupActive={setPopupActive} />
+        <Header setPopupActive={setPopupActive} todos={todos} />
         <TodoView
           setTodos={setTodos}
           todos={todos}
